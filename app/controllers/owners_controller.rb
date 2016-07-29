@@ -13,7 +13,7 @@ class OwnersController < ApplicationController
     if owner.save
       redirect_to owner_path(owner)
     else
-      flash[:error] = @owner.errors.full_messages.join(" ")
+      flash[:error] = owner.errors.full_messages.join(" ")
       redirect_to new_owner_path
     end
   end
